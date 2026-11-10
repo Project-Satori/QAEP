@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Searchable historical archive of Qualcomm CodeAurora Android releases.">
+  <title>CAF Release Archive</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <div class="eyebrow">HISTORICAL SOURCE INDEX</div>
+      <h1>CAF Release Archive</h1>
+      <p class="intro">A searchable index of the archived CodeAurora Android release table.</p>
+      <div class="source-line">Source snapshot: <a id="source-link" href="https://web.archive.org/web/20220207223122/https://wiki.codeaurora.org/xwiki/bin/QAEP/release" target="_blank" rel="noopener">Wayback Machine · 07 Feb 2022</a></div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="stats" aria-live="polite">
+      <div class="stat"><strong id="total-count">—</strong><span>RELEASE RECORDS</span></div>
+      <div class="stat"><strong id="year-count">—</strong><span>YEAR SHARDS</span></div>
+      <div class="stat"><strong id="chipset-count">—</strong><span>CHIPSETS</span></div>
+    </section>
+
+    <section class="filters" aria-label="Release filters">
+      <label class="search-label">Search
+        <input id="search" type="search" placeholder="Tag, chipset, manifest, Android version…" autocomplete="off">
+      </label>
+      <label>Year
+        <select id="year"><option value="">All years</option></select>
+      </label>
+      <label>Chipset
+        <select id="chipset"><option value="">All chipsets</option></select>
+      </label>
+      <button id="reset" type="button">Reset</button>
+    </section>
+
+    <div class="result-bar">
+      <div id="result-count">Loading archive…</div>
+      <div class="hint">Search is performed locally in your browser.</div>
+    </div>
+
+    <div class="table-scroll">
+      <table>
+        <thead><tr>
+          <th>Date</th><th>Tag / Build ID</th><th>Chipset</th><th>Manifest</th><th>Android</th>
+        </tr></thead>
+        <tbody id="results">
+          <tr><td colspan="5" class="empty">Loading data…</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <nav class="pagination" aria-label="Pagination">
+      <button id="prev" type="button" disabled>← Previous</button>
+      <span id="page-label">Page 1</span>
+      <button id="next" type="button" disabled>Next →</button>
+    </nav>
+    <footer>
+      <p>Independent archival project. Not affiliated with Qualcomm or CodeAurora.</p>
+      <p>Data provenance: original Wayback snapshot and committed JSON export.</p>
+    </footer>
+  </main>
+  <script src="./app.js"></script>
+</body>
+</html>
